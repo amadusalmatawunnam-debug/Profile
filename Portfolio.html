@@ -1,0 +1,639 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Salmata Wunnam Amadu | Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-serif@latest/latin-400-normal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-serif@latest/latin-500-italic.css" />
+<style>
+  :root {
+    --bg: #0e0e0c;
+    --bg-soft: #15150f;
+    --ink: #f4f1ea;
+    --ink-dim: #a8a39a;
+    --ink-mute: #6b6760;
+    --line: #26241f;
+    --accent: #d9b26a;
+    --accent-soft: #e8cf9a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'IBM Plex Serif', Georgia, serif; font-weight: 400; }
+  .italic { font-style: italic; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(14, 14, 12, 0.75);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .logo {
+    width: 38px; height: 38px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 14px;
+    color: var(--ink-dim);
+  }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 13px;
+    padding: 9px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 120px 0 100px;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 40px;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 7vw, 96px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 36px;
+    max-width: 14ch;
+  }
+  .hero h1 .accent { color: var(--accent); font-style: italic; }
+  .hero p {
+    font-size: 18px;
+    color: var(--ink-dim);
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-ghost {
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .hero-meta {
+    display: flex;
+    gap: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+  .hero-meta .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 0; border-top: 1px solid var(--line); }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 72px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+  }
+  .section-title .italic { color: var(--accent); }
+  .section-sub {
+    color: var(--ink-dim);
+    max-width: 380px;
+    font-size: 15px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-grid p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .about-grid p:first-child {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .skill {
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.3s;
+  }
+  .skill:last-child { border-right: none; }
+  .skill:hover { background: var(--bg-soft); }
+  .skill-num {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .skill h3 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .skill p { color: var(--ink-dim); font-size: 15px; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .project {
+    background: var(--bg);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 380px;
+    position: relative;
+    transition: background 0.35s;
+    cursor: pointer;
+  }
+  .project:hover { background: var(--bg-soft); }
+  .project.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #1a1812 0%, #0e0e0c 100%);
+  }
+  .project.featured:hover { background: linear-gradient(135deg, #201d14 0%, #14130f 100%); }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .project-num {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+  }
+  .project-badge {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .project-badge.featured {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .project-title {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-top: 20px;
+  }
+  .project-desc {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 52ch;
+    margin-top: auto;
+  }
+  .project-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
+  .project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 12px;
+    color: var(--ink-mute);
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--ink);
+    transition: color 0.2s, gap 0.2s;
+  }
+  .project:hover .project-link { color: var(--accent); gap: 10px; }
+
+  /* CTA */
+  .cta {
+    padding: 120px 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .cta-num {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .cta h2 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+    max-width: 16ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta h2 .italic { color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill { border-right: none; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project.featured { grid-column: span 1; }
+    .project { padding: 32px 24px; min-height: 320px; }
+    .hero { padding: 80px 0 60px; }
+    section { padding: 72px 0; }
+    .container { padding: 0 20px; }
+    .nav-inner { padding: 16px 20px; }
+  }
+
+  /* FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="profile.html" class="logo">S</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+    </div>
+    <a href="Contact.html" class="nav-cta">Let's talk →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-tag">Web developer · Designer · Curious builder</div>
+    <h1>Digital experiences with a <span class="accent italic">human</span> point of view.</h1>
+    <p>I'm Salmata, an aspiring web developer who turns thoughtful ideas into clear, useful, and beautiful interfaces.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">View my work ↗</a>
+      <a href="Contact.html" class="btn btn-ghost">Start a conversation →</a>
+    </div>
+    <div class="hero-meta">
+      <span><span class="dot"></span> Based in Ghana</span>
+      <span>Available for new ideas</span>
+      <span>Portfolio · 2026</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">01 / About</div>
+        <h2 class="section-title">A little about <span class="italic">me.</span></h2>
+      </div>
+      <p class="section-sub">I care about the details that make a site feel effortless.</p>
+    </div>
+    <div class="about-grid fade-in">
+      <div>
+        <p>I love building on the web because it sits at the intersection of creativity, problem solving, and connection.</p>
+        <p>My approach is simple: understand the person on the other side of the screen, then make their next step feel natural.</p>
+      </div>
+      <div>
+        <p>I'm growing my practice across HTML, CSS, and JavaScript, with a focus on responsive layouts, accessible interactions, and interfaces that stay useful long after the first impression.</p>
+        <p>Every project is a chance to learn something new — and to make something that actually helps someone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">02 / What I bring</div>
+        <h2 class="section-title">Skills with room to <span class="italic">grow.</span></h2>
+      </div>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill">
+        <div class="skill-num">01</div>
+        <h3>Frontend development</h3>
+        <p>Semantic HTML, responsive CSS, and JavaScript foundations for fast, flexible pages.</p>
+      </div>
+      <div class="skill">
+        <div class="skill-num">02</div>
+        <h3>Visual design</h3>
+        <p>Layouts, color, type, and visual hierarchy that give content a confident voice.</p>
+      </div>
+      <div class="skill">
+        <div class="skill-num">03</div>
+        <h3>Creative problem solving</h3>
+        <p>Curiosity, iteration, and a practical mindset for turning rough ideas into working experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">03 / Selected work</div>
+        <h2 class="section-title">Projects I've been <span class="italic">building.</span></h2>
+      </div>
+      <p class="section-sub">A growing collection of web experiences — from tools to experiments.</p>
+    </div>
+
+    <div class="projects-grid fade-in">
+
+      <a href="../Agrihub/landing.html" class="project featured">
+        <div class="project-head">
+          <span class="project-num">01 · Featured</span>
+          <span class="project-badge featured">Featured</span>
+        </div>
+        <h3 class="project-title">AgriTech platform</h3>
+        <p class="project-desc">A clear digital home for modern farming tools, services, and practical resources.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">UX thinking</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+          <span class="project-link">Explore project →</span>
+        </div>
+      </a>
+
+      <a href="../Restaurant/" class="project">
+        <div class="project-head">
+          <span class="project-num">02</span>
+          <span class="project-badge">Web</span>
+        </div>
+        <h3 class="project-title">Restaurant site</h3>
+        <p class="project-desc">A warm, inviting website for a restaurant — menus, story, and reservations in one place.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Layout</span>
+          </div>
+          <span class="project-link">View project →</span>
+        </div>
+      </a>
+
+      <a href="../TO DO/To  do.html do.html" class="project">
+        <div class="project-head">
+          <span class="project-num">03</span>
+          <span class="project-badge">Utility</span>
+        </div>
+        <h3 class="project-title">Task Manager</h3>
+        <p class="project-desc">A to-do manager that helps you track activities you plan to do for the day and monitor your progress.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+          <span class="project-link">See the task manager →</span>
+        </div>
+      </a>
+
+      <a href="../Calculator/Calculator.html" class="project">
+        <div class="project-head">
+          <span class="project-num">04</span>
+          <span class="project-badge">Tool</span>
+        </div>
+        <h3 class="project-title">Calculator</h3>
+        <p class="project-desc">A clean, everyday calculator — small web experience designed to make quick math simpler.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Interaction</span>
+          </div>
+          <span class="project-link">See the calculator →</span>
+        </div>
+      </a>
+
+      <a href="../Quiz/quiz.html" class="project">
+        <div class="project-head">
+          <span class="project-num">05</span>
+          <span class="project-badge">Interactive</span>
+        </div>
+        <h3 class="project-title">Quiz app</h3>
+        <p class="project-desc">An interactive quiz that tests knowledge with instant feedback, scoring, and a friendly flow.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+          <span class="project-link">Take the quiz →</span>
+        </div>
+      </a>
+
+      <a href="../Form/LogIn & Sign Up.html" class="project">
+        <div class="project-head">
+          <span class="project-num">06</span>
+          <span class="project-badge">Form</span>
+        </div>
+        <h3 class="project-title">Log In & Sign Up form</h3>
+        <p class="project-desc">A thoughtful form that you can use to log in or sign up in your student portal.</p>
+        <div class="project-foot">
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Validation</span>
+            <span class="tag">UX</span>
+          </div>
+          <span class="project-link">Try the form →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-num">04 / Next chapter</div>
+    <h2>Have a good idea? Let's make it <span class="italic">tangible.</span></h2>
+    <a href="Contact.html" class="btn btn-primary">Get in touch ↗</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Salmata Wunnam Amadu. Built with curiosity.</span>
+    <span>Ghana · Available worldwide</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
